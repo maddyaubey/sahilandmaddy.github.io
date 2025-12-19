@@ -10,12 +10,13 @@ export const fadeOut = (trigger: HTMLElement, target: HTMLElement) => {
       start: 'top top',
       end: 'bottom center',
       scrub: true,
+	  pin:true,
     },
   })
 
   tl.to(target, {
     opacity: 0,
-    duration: 1,
+    duration: 1.,
   })
 }
 
@@ -28,6 +29,7 @@ export const fadeIn = (trigger: HTMLElement, target: HTMLElement) => {
       start: 'top 75%',
       end: 'bottom bottom',
       scrub: true,
+	  pin:true,
     },
   })
 

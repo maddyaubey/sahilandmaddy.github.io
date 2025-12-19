@@ -27,7 +27,6 @@ import "../styles/index.css";
 	const scale = 1.85;
 
 	const tl0 = gsap.timeline()
-
 	tl0.set("header", {
 	opacity:0
 	})
@@ -69,11 +68,9 @@ import "../styles/index.css";
 	}
 
 	});
-	
 
 	const tl1 = gsap.timeline()
 	ScrollTrigger.matchMedia({
-
 	// Desktop
 	"(min-width: 1024px)": () => {
 		tl1.to("header",
@@ -82,7 +79,7 @@ import "../styles/index.css";
 		xPercent: -40,
 		yPercent: -40,
 		scale: 0.3,
-		duration:1,
+		duration:0.5,
 		ease: "power2.out",
 		scrollTrigger: {
 				trigger: hero,
@@ -105,7 +102,6 @@ import "../styles/index.css";
 		}
 		});
 	},
-
 	// Mobile
 	"(max-width: 1023px)": () => {
 		tl1.to("header",
@@ -114,7 +110,7 @@ import "../styles/index.css";
 		xPercent: -40,
 		yPercent: -40,
 		scale: 0.3,
-		duration:1,
+		duration:0.5,
 		ease: "power2.out",
 		scrollTrigger: {
 				trigger: hero,
@@ -139,8 +135,97 @@ import "../styles/index.css";
 	}
 
 	});
-	
-	
+
+	const tl2 = gsap.timeline()
+	ScrollTrigger.matchMedia({
+	// Desktop
+	"(min-width: 1024px)": () => {
+		tl2.set("header",
+		{
+		opacity:1,
+		xPercent: -40,
+		yPercent: -40,
+		scale: 0.3,
+		duration:0.5,
+		ease: "power2.out",
+		scrollTrigger: {
+				trigger: hero,
+				start: 'top top',
+				end: '+=300',
+				scrub: true,
+			}
+		})
+
+		ScrollTrigger.create({
+		trigger: hero,
+		start: "middle top",
+		onLeaveBack: () => {
+			gsap.to("header", {
+			scale: scale,
+			y: -rect.top*0.9,
+			duration: 0.1,
+			ease:"power2.out"
+			});
+		}
+		});
+	},
+	// Mobile
+	"(max-width: 1023px)": () => {
+		tl1.set("header",
+		{
+		opacity:1,
+		xPercent: -40,
+		yPercent: -40,
+		scale: 0.3,
+		duration:0.5,
+		ease: "power2.out",
+		scrollTrigger: {
+				trigger: hero,
+				start: 'top top',
+				end: '+=300',
+				scrub: true,
+			}
+		})
+
+		ScrollTrigger.create({
+		trigger: hero,
+		start: "middle top",
+		onLeaveBack: () => {
+			gsap.to("header", {
+			scale: scale,
+			y: -rect.top*0.8,
+			duration: 0.1,
+			ease:"power2.out"
+			});
+		}
+		});
+	}
+
+	});
+
+	window.addEventListener("load", () => {
+		if (window.scrollY > 0) {
+			tl0.progress(1);
+			tl0.fromTo("header", 
+			{
+				opacity:0,
+				scale:0.3,
+			},
+			
+			{
+				opacity:1,
+				xPercent: -40,
+				yPercent: -40,
+				scale: 0.3,
+				duration:0.1,
+				ease:"power2.out"
+			})
+			tl1.progress(0);
+		} else {
+			tl0.progress(0);
+			tl1.progress(0);
+		}
+		});
 	
   })
 </script>

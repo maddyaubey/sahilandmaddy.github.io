@@ -9,6 +9,7 @@ import { Image } from 'astro:assets'
 import profile from '@/images/maddy.jpg'
 
 const { title } = Astro.props
+import About from '@/sections/About.astro'
 ---
 
 <!doctype html>
@@ -25,16 +26,19 @@ const { title } = Astro.props
   <body class="relative">
     <Header />
 	<div class="static bg-light-brown min-h-screen grid place-items-center">
-		<div class="flex flex-col space-y-10 justify-center items-center h-screen bg-opacity-0 z-30 max-w-[90vw] max-h-[90vh] lg:max-w-[50vw] lg:max-h-[50vh]">
+		<div class="flex flex-col space-y-10 lg:space-y-2 lg:mt-20 justify-center items-center h-screen bg-opacity-0 z-30 max-w-[90vw] max-h-[90vh] lg:max-w-[50vw] lg:max-h-[50vh]">
 			
 			<Image
-				class="mt-40 md:mt-20 bg-opacity-0 rounded-xl hero-image"
+				class="mt-30 md:mt-20 lg:mt-15 bg-opacity-0 rounded-xl hero-image"
 				src={profile}
 				alt=""
 			/>
 		<!--<div class="spacer"/>-->
 		<div class="hover:text-light-gray text-dark-brown transition-colors hero-email">
 			<a href="mailto:madisonaubey@g.ucla.edu"><i class="fa fa-envelope" style="font-size:48px;"></i></a>
+		</div>
+		<div class="hover:text-light-gray text-dark-brown transition-colors hero-scroll">
+			<i id="scrollIcon" class="fa fa-chevron-down" style="font-size:48px;"></i>
 		</div>
 	</div>
    </div>
@@ -48,6 +52,9 @@ const { title } = Astro.props
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import { DOMLoaded } from '@/ts/events'
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollToPlugin);
 
   gsap.from(".hero-image", {
   opacity: 0,
@@ -64,6 +71,25 @@ const { title } = Astro.props
   delay:1.25,
   ease:'power2.out'
 	});
+
+  gsap.from(".hero-scroll", {
+  opacity: 0,
+  scale: 0.25,
+  duration: 0.5,
+  delay:1.25,
+  ease:'power2.out'
+	});
+
+  document.getElementById("scrollIcon").addEventListener("click", () => {
+  gsap.to(window, {
+    duration: 0.6,
+    scrollTo: {
+      y: ".hero-email",
+      offsetY: 150,
+    },
+    ease: "power2.out"
+    });
+  });  
 
 </script>
 
