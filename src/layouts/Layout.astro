@@ -25,23 +25,7 @@ import About from '@/sections/About.astro'
   </head>
   <body class="relative">
     <Header />
-	<div class="static bg-light-brown min-h-screen grid place-items-center">
-		<div class="flex flex-col space-y-10 lg:space-y-2 lg:mt-20 justify-center items-center h-screen bg-opacity-0 z-30 max-w-[90vw] max-h-[90vh] lg:max-w-[50vw] lg:max-h-[50vh]">
-			
-			<Image
-				class="mt-45 md:mt-20 lg:mt-15 bg-opacity-0 rounded-xl hero-image"
-				src={profile}
-				alt=""
-			/>
-		<!--<div class="spacer"/>-->
-		<div class="hover:text-light-gray text-dark-brown transition-colors hero-email">
-			<a href="mailto:madisonaubey@g.ucla.edu"><i class="fa fa-envelope" style="font-size:48px;"></i></a>
-		</div>
-		<div class="hover:text-light-gray text-dark-brown transition-colors hero-scroll">
-			<i id="scrollIcon" class="fa fa-chevron-down" style="font-size:48px;"></i>
-		</div>
-	</div>
-   </div>
+
 
 
    <slot />
@@ -56,49 +40,15 @@ import About from '@/sections/About.astro'
 
   gsap.registerPlugin(ScrollToPlugin);
 
-  gsap.from(".hero-image", {
-  opacity: 0,
-  scale: 0.25,
-  duration: 0.5,
-  delay:1.25,
-  ease:'power2.out'
-	});
-
-  gsap.from(".hero-email", {
-  opacity: 0,
-  scale: 0.25,
-  duration: 0.5,
-  delay:1.25,
-  ease:'power2.out'
-	});
-
-  gsap.from(".hero-scroll", {
-  opacity: 0,
-  scale: 0.25,
-  duration: 0.5,
-  delay:1.25,
-  ease:'power2.out'
-	});
-
-  DOMLoaded(() => {
-  const scrollIcon = document.getElementById("scrollIcon")!
-  scrollIcon.addEventListener("click", () => {
-	gsap.to(window, {
-		duration: 0.6,
-		scrollTo: {
-		y: "#about-section",
-		},
-		ease: "power2.out"
-		});
-	});  
-  });
 </script>
 
 
 <style is:global>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Leckerli+One&family=Lilita+One&family=Outfit:wght@100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Leckerli+One&family=Lilita+One&family=Outfit:wght@100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+  @import url(https://db.onlinewebfonts.com/c/711dd5dc05a0fcd5f4b1901710be4fa5?family=Stolen+Love++Black); 
+  
 html {
     @apply scroll-smooth;
   }

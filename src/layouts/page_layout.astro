@@ -1,0 +1,72 @@
+---
+import Header from '@/components/Header.astro'
+import "../styles/index.css";
+
+interface Props {
+  title: string
+}
+import { Image } from 'astro:assets'
+import profile from '@/images/maddy.jpg'
+
+const { title } = Astro.props
+import About from '@/sections/About.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+    <link rel="icon" type="images/svg+xml" href="../icons/maddy.svg" />
+    <meta name="generator" content={Astro.generator} />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{title}</title>
+  </head>
+  <body class="relative">
+
+
+   <slot />
+  </body>
+</html>
+
+<script>
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { DOMLoaded } from '@/ts/events'
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollToPlugin);
+
+</script>
+
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Leckerli+One&family=Lilita+One&family=Outfit:wght@100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+  @import url(https://db.onlinewebfonts.com/c/711dd5dc05a0fcd5f4b1901710be4fa5?family=Stolen+Love++Black); 
+  
+html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-sans;
+  }
+
+  h1 {
+	@apply font-serif;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+</style>

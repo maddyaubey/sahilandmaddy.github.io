@@ -15,13 +15,18 @@ export default {
       'slate-gray': '#708090',
 	  'light-brown': '#c29d70',
 	  'dark-brown': '#5f3707ff',
+	  'button':'#a46338ff',
+	  'dark-green': '#495435',
+	  'light-green': '#7B8F61',
     },
     fontFamily: {
-      sans: ['Leckerli One', 'cursive'],
-      serif: ['BBH Bogle', 'sans-serif'],
-	  pretty: ['Outfit', 'sans-serif'],
+      sans: ['Stolen Love Black', 'cursive'],
+      serif: ['New Icon', 'serif'],
+	  text: ['Cormorant Garamond', 'serif'],
+	  header: ['Stolen Love Black'],
     },
     extend: {},
   },
   plugins: [],
+  
 }

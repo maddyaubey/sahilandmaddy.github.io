@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import "../styles/index.css";
+
+import { Image } from 'astro:assets'
+import faq from '@/images/faq.jpg'
+import travel from '@/images/travel.png'
+---
+
+<!--<header
+  class="fixed top-[5%] right-[5%] w-screen h-screen text-[7vw] z-20"
+>
+	<div id="accommodation-header" class="justify-right text-white">
+		<h4 class="text-[clamp(2rem,2.5vw,8rem)] text-right font-text">
+				<a href="../#about-section" class="hover:text-button">home</a> | <a href="travel" class="hover:text-button"><i>accommodations & travel</i> </a> | <a href="schedule" class="hover:text-button">schedule </a> | <a href="FAQ" class="hover:text-button">FAQ </a> | <a href="registry" class="hover:text-button">registry</a>
+		</h4>
+		<h1 data-header class="text-right justify-right text-white max-w-[12ch] md:max-w-none whitespace-nowrap">ACCOMMODATIONS</h1>
+  	</div>
+
+</header>-->
+
+<section data-hero class="relative min-h-screen">
+	<div class="absolute min-h-screen w-full">
+		<Image
+			class="absolute inset-0 w-full h-full object-cover"
+			src={faq}
+			alt=""
+		/>
+	</div>
+	<div accommodation-header class="absolute inset-0 top-[5%] right-[5%] justify-right text-white text-[7w] opacity-1">
+		<h4 class="text-[clamp(2rem,2.5vw,8rem)] text-right font-text">
+				<a href="../#about-section" class="hover:text-button">home</a> | <a href="travel" class="hover:text-button">accommodations & travel</a> | <a href="schedule" class="hover:text-button">schedule </a> | <a href="FAQ" class="hover:text-button"><i>FAQ</i> </a> | <a href="registry" class="hover:text-button">registry</a>
+		</h4>
+		<h1 class="text-right align-right text-[7vw] md:max-w-none whitespace-nowrap">FREQUENTLY ASKED QUESTIONS</h1>
+	</div>
+</section>
+
+<section
+  accommodation-info
+  class="flex bg-button text-white min-h-screen w-full z-30"
+>
+<div class="items-center justify-center">
+	<h1>hello</h1>
+</div>
+</section>
+
+
+<script>
+  import { gsap } from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { DOMLoaded } from '@/ts/events'
+
+  DOMLoaded(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const header = document.querySelector('[accommodation-header]') as HTMLElement
+    const hero = document.querySelector('[data-hero]') as HTMLElement
+    const accommodation = document.querySelector('[data-hero]') as HTMLElement
+    const accommodation_info = document.querySelector('[data-accommodation]') as HTMLElement
+    const travel = document.querySelector('[travel-info]') as HTMLElement
+    const travel_header = document.getElementById("travel-header")!
+
+	const tl0 = gsap.timeline()
+	tl0.set("header", {
+	opacity:0
+	})
+	tl0.to("header", {
+	opacity:1,
+	duration:2.,
+	ease:"power2.out"
+	})
+
+	const tl1 = gsap.timeline({
+		scrollTrigger: {
+		trigger: accommodation,
+		start: 'top top',
+		scrub:true,
+		},
+	})
+
+	tl1.to("header", 
+	{ opacity:0,
+	ease:'power2.out', 
+	duration: 0.5 })
+
+
+
+})
+
+
+</script>
+
+
+

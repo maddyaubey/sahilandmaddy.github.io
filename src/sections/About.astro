@@ -1,28 +1,49 @@
 ---
 import TextReveal from '@/components/TextReveal.astro'
+
+import { Image } from 'astro:assets'
+import profile from '@/images/homepage_filmy.jpg'
+
+import "../styles/global.css";
+import "../styles/index.css";
 ---
 
 <section
   data-about id="about-section" 
-  class="flex bg-light-brown text-dark-brown min-h-screen"
+  class="flex bg-light-brown text-dark-brown min-h-screen w-full z-30"
 >
 <!--py-40 lg:py-52 xl:py-60 px-8 (old parameters in the above)-->
-  <TextReveal
-    class="text-3xl lg:text-4xl 2xl:text-5xl font-sans font-bold max-w-[60vw] leading-normal lg:leading-normal 2xl:leading-normal mx-auto my-auto"
-    color="bg-gradient-to-r from-white to-white text-dark-brown"
-  >
-    Hi! I'm Maddy Aubey, a 5th year anthropology Ph.D. candidate at UCLA.
-  </TextReveal>
+	<div class="flex flex-col md:flex-row gap-1 w-full h-screen sm:h-[auto] items-center">
+		<div class="">
+			<Image
+				class="w-[39%] p-8 flex items-center justify-center md:items-start md:justify-start h-[70dvh] w-full object-contain rounded-4xl hero-image"
+				src={profile}
+				alt=""
+				loading="eager"
+			/>
+		</div>
+		<div class="w-[61%] p-6 flex flex-col items-center justify-center md:items-center md:justify-center max-w-[70vw] leading-normal lg:leading-normal 2xl:leading-normal mx-auto my-auto">
+			<h1 class="text-[clamp(5rem,5.5vw,13rem)] text-center" color="text-dark-brown">
+				OVERBROOK HOUSE
+
+			</h1>
+			<h3 class="text-[clamp(4rem,4vw,11rem)] text-center ">
+				BUZZARDS BAY, MA
+			</h3>
+			<div class="h-10"></div>
+			<h1 class="text-[clamp(5rem,5.5vw,12rem)] text-center" color="text-dark-brown">
+				AUGUST 22, 2026
+			</h1>
+			<button class="bg-button border-1 border-dark-brown text-light-brown font-serif px-24 py-7 text-8xl text-center rounded-full hover:bg-dark-brown hover:text-light-brown">
+				RSVP
+			</button>
+			<div class="h-8"></div>
+
+			<h4 class="text-[clamp(2rem,2.5vw,8rem)] text-center font-text">
+				<a href="travel" class="hover:text-button">accommodations & travel </a> | <a href="schedule" class="hover:text-button">schedule </a> | <a href="FAQ" class="hover:text-button">FAQ </a> | <a href="registry" class="hover:text-button">registry</a>
+			</h4>
+		</div>
+	</div>
 </section>
 
-<script>
-  import { DOMLoaded } from '../ts/events'
-  import { fadeOut } from '../ts/animations'
 
-  DOMLoaded(() => {
-    const trigger = document.querySelector('[data-about]') as HTMLElement
-    const target = trigger.querySelector('p') as HTMLElement
-
-    fadeOut(trigger, target)
-  })
-</script>
