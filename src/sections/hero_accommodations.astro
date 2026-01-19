@@ -18,7 +18,7 @@ import travel from '/src/images/travel.png'
 		/>
 	</div>
 	<div accommodation-header class="absolute inset-0 top-[5%] right-[5%] justify-right text-white text-[7w] opacity-1">
-		<h4 class="text-[clamp(2rem,2.5vw,8rem)] text-right font-text">
+		<h4 class="text-[clamp(2rem,2.5vw,8rem)] md:min-w-max text-right font-text">
 				<a href="../#about-section" class="hover:text-button hover:italic">home</a> | <a href="../travel/#data-hero" class="text-button hover:text-button hover:italic"><i>accommodations </a>& <a href="../travel/#data-travel" class="hover:text-button hover:italic">travel</i> </a> | <a href="../schedule" class="hover:text-button hover:italic">schedule </a> | <a href="../FAQ" class="hover:text-button hover:italic">FAQ </a> | <a href="../registry" class="hover:text-button hover:italic">registry</a>
 		</h4>
 		<h1 class="text-right align-right text-[9vw] md:max-w-none whitespace-nowrap">ACCOMMODATIONS</h1>
@@ -27,10 +27,24 @@ import travel from '/src/images/travel.png'
 
 <section
   accommodation-info
-  class="flex bg-dark-green text-white min-h-screen w-full z-30"
+  class="flex bg-dark-green text-white min-h-screen w-full z-30 justify-center items-center"
 >
-<div class="items-center justify-center">
-	<h1>hello</h1>
+<div class="pt-5 pb-5 text-center items-center justify-center max-w-[80vw] md:max-w-[70vw]">
+	<h1 class="text-[clamp(2rem,5vw,10rem)]">HOTELS & AIRBNBS</h1>
+	<p class="italic font-text text-[clamp(1rem,1.8vw,8rem)]">Here are some suggestions for hotels in the area. 
+	We've organized them by location (on- vs. off-cape, with on-cape generally being more expensive on average) and within those categories sorted them from least-to-most expensive. 
+	If you'd like to search on your own, we'd recommend looking in Buzzards Bay/Bourne (for the most proximal options), Sandwich, Falmouth, and Hyannis for close "on-Cape" options, and Wareham and Plymouth for nearby "off-Cape" options.
+	</p>
+	<div class="flex pt-5 justify-center items-center">
+	<iframe
+		src="https://www.google.com/maps/d/embed?mid=1X1LRljiaQ_XS_UB9EpHM8FMzRu8TwLM&hl=en&ehbc=2E312F"
+		class="w-[600px] h-[450px] border-0"
+		loading="lazy">
+	</iframe>
+	</div>
+	<p class="pt-5 italic font-text text-[clamp(1rem,2vw,8rem)]">Airbnbs in any of these areas should be fine, so feel free to target your searches accordingly. 
+	</p>
+	<!--<iframe src="https://www.google.com/maps/d/embed?mid=1X1LRljiaQ_XS_UB9EpHM8FMzRu8TwLM&hl=en&ehbc=2E312F" width="640" height="480"></iframe>-->
 </div>
 </section>
 
@@ -43,7 +57,7 @@ import travel from '/src/images/travel.png'
 		/>
 	</div>
 	<div id="travel-header" class="absolute inset-0 top-[5%] left-[5%] justify-left text-dark-brown opacity-1">
-		<h4 class="text-[clamp(2rem,2.5vw,8rem)] text-left font-text">
+		<h4 class="text-[clamp(2rem,2.5vw,8rem)] md:min-w-max text-left font-text">
 				<a href="../#about-section" class="hover:text-light-brown hover:italic">home</a> | <a href="../travel/#data-hero" class="hover:text-light-brown hover:italic"><i>accommodations </a>& <a href="../travel/#data-travel" class="text-light-brown hover:text-light-brown hover:italic">travel</i> </a> | <a href="../schedule" class="hover:text-light-brown hover:italic">schedule </a> | <a href="../FAQ" class="hover:text-light-brown hover:italic">FAQ </a> | <a href="../registry" class="hover:text-light-brown hover:italic">registry</a>
 		</h4>
 		<h1 class="text-left text-[9vw] max-w-[12ch] md:max-w-none whitespace-nowrap">TRAVEL</h1>
@@ -52,10 +66,19 @@ import travel from '/src/images/travel.png'
 
 <section
   travel-info
-  class="flex bg-light-green text-white min-h-screen w-full z-30"
+  class="flex bg-light-green text-white min-h-screen w-full z-30 justify-center items-center"
 >
-<div class="items-center justify-center">
-	<h1>hello</h1>
+<div class="text-center items-center justify-center max-w-[80w] md:max-w-[70vw]">
+	<h1 class="text-[clamp(2rem,5vw,10rem)]">Airports</h1>
+	<p class="italic font-text text-[clamp(1rem,1.8vw,8rem)]">Being right at the <a class="line-through">armpit</a> entrance of the Cape, 
+	our venue is roughly equidistant from both Boston and Providence (about an hour drive from either), so we'd encourage guests coming from outside the Northeast to look for 
+	flights arriving into Logan (BOS) or T.F. Green (PVD) on Friday evening.
+	</p>
+
+	<h1 class="pt-10 text-[clamp(2rem,5vw,10rem)]">Transportation</h1>
+	<p class="italic font-text text-[clamp(1rem,1.8vw,8rem)]">Public transportation is not particularly convenient in and around the Cape, 
+	so we'd encourage guests to rent a car and carpool or stay close to the venue that Ubers aren't too expensive.
+	</p>
 </div>
 </section>
 
