@@ -16,17 +16,22 @@ import ganesh from '/src/images/ganesh.png'
 
 <header
   data-header
-  class="fixed bottom-30 left-0 w-screen h-screen flex items-center justify-center text-[10vw] text-white z-20"
+  class="fixed bottom-30 left-0 w-screen h-screen flex items-center justify-center text-[10vw] text-white z-20 isolate"
 >
+
   <h1 class="text-center text-white max-w-[12ch] md:max-w-none whitespace-nowrap">SAHIL & MADDY</h1>
-	<div class="">
-	<Image
+
+
+  <!-- Bottom-centered image -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 pb-10">
+    <Image
 				id="scroll-icon"
-				class="fixed top-[85%] left-[44%] max-h-[10dvh] w-auto objects-contain opacity-bg-0 flex align-center invert"
+				class="max-h-[10dvh] w-auto objects-contain opacity-bg-0 flex align-center invert"
 				src={ganesh}
 				alt=""
 		/>
-	</div>
+  </div>
+
 </header>
 
 
@@ -66,7 +71,8 @@ import ganesh from '/src/images/ganesh.png'
 	opacity:0, 
 	ease:"power2.out",
 	scrub:true,
-	duration: 0.5 
+	duration: 0.5,
+	pointerEvents: "none",
 	})
 
     tl2.to(header, { color: '#022859', duration: 1 })
