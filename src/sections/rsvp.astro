@@ -3,40 +3,41 @@ import "../styles/global.css";
 import "../styles/index.css";
 
 import { Image } from 'astro:assets'
-import banff from '/src/images/banff.jpg'
-import soonCome from '/src/images/soon_come.jpg'
+import rsvp from '/src/images/lifting.jpg'
+import travel from '/src/images/travel.png'
+
 ---
 
 <section data-hero class="relative min-h-screen">
 	<div class="absolute min-h-screen w-full">
 		<Image
 			class="absolute inset-0 w-full h-full object-cover"
-			src={banff}
+			src={rsvp}
 			alt=""
 		/>
 	</div>
-	<div registry-header class="absolute inset-0 top-[5%] right-[5%] justify-right text-dark-blue text-[7w] opacity-1 pl-3 pr-3">
+	<div accommodation-header class="absolute inset-0 top-[5%] right-[5%] justify-right text-dark-blue text-[7w] opacity-1">
 		<h4 class="text-[clamp(1.5rem,2.5vw,8rem)] md:text-[clamp(2rem,2.5vw,8rem)] md:min-w-max text-right font-text">
-				<a href="../#about-section" class="hover:text-button md:hover:italic">home</a> | <a href="../travel/#data-hero" class="hover:text-button md:hover:italic">accommodations </a>& <a href="../travel/#data-travel" class="hover:text-button md:hover:italic">travel</a> | <a href="../schedule" class="hover:text-button md:hover:italic">schedule</a> | <a href="../FAQ" class="hover:text-button md:hover:italic">FAQ </a> | <a href="../registry" class="text-button italic hover:text-button md:hover:italic">registry</a>
+				<a href="../#about-section" class="not-italic hover:text-dark-brown md:hover:text-dark-brown md:hover:italic">home</a> | <a href="../travel/#data-hero" class="hover:text-dark-brown md:hover:text-dark-brown md:hover:italic">accommodations </a>& <a href="../travel/#data-travel" class="hover:text-dark-brown md:hover:italic">travel</a> | <a href="../schedule" class="hover:text-button md:hover:text-dark-brown md:hover:italic">schedule</a> | <a href="../FAQ" class="hover:text-button md:hover:text-dark-brown md:hover:italic">FAQ </a> | <a href="../registry" class="hover:text-button md:hover:text-dark-brown md:hover:italic">registry</a>
 		</h4>
-		<h1 class="text-right align-right text-[9vw] md:max-w-none whitespace-nowrap">REGISTRY</h1>
+		<h1 class="text-right align-right text-[12vw] md:max-w-none whitespace-nowrap">RSVP</h1>
 	</div>
 </section>
 
 <section
-  registry-info
+  accommodation-info
   class="flex bg-dark-blue text-white min-h-screen w-full z-30 items-center justify-center"
 >
-<div class="pt-10 pb-10 justify-center text-center max-w-[70vw]">
-<!--<h1 class="text-[7vw]">TBA</h1>-->
-	<Image
-				id="scroll-icon"
-				class="max-h-[30dvh] w-auto objects-contain opacity-bg-0 flex align-center"
-				src={soonCome}
-				alt=""
-		/>
+<div class="pt-10 pb-10 justify-center text-center max-w-[90vw]">
+
+<style>#onlineRSVP { width:10px; min-width:100%; }</style>
+<!--<script src="https://www.online-rsvp.com/event/iframeResizer.min.js"></script>-->
+<iframe class="border-4 w-[70vw] md:w-[50vw] h-[600px] md:h-[500px]" src="https://www.online-rsvp.com/event/index.php?event_id=27560&embed=1&token=1d77caf62374e4524ba243e2a9a519f7" title="Sahil & Maddy's Wedding">
+</iframe><!--<script>iFrameResize({ log: true }, '#onlineRSVP')</script>-->
 </div>
+
 </section>
+
 
 <script>
   import { gsap } from 'gsap'
