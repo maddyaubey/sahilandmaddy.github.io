@@ -18,6 +18,7 @@ export default {
 	  'button':'#a46338ff',
 	  'dark-green': '#495435',
 	  'light-green': '#7B8F61',
+	  'forest-green':'#0c3617'
     },
     fontFamily: {
       sans: ['Stolen Love Black', 'cursive'],
